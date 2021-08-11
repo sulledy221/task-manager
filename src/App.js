@@ -1,23 +1,20 @@
-import logo from './logo.svg';
+import React, {useState} from 'react';
 import './App.css';
+import Header from './components/Header'
+import Tasks from './components/Tasks'
 
 function App() {
+  const onToggleStatus = (task) => {
+    console.log('completing task')
+  }
+  const [tasks, setTasks] = useState([
+    { title: '', id: 1 },
+    { title: '', id: 2 }
+  ]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header />
+      <Tasks tasks={tasks} setTasks={setTasks} onToggleStatus={onToggleStatus}/>
     </div>
   );
 }
