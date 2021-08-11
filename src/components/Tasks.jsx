@@ -6,7 +6,7 @@ export default function Tasks({ tasks, onToggleStatus }) {
       <div className="row">
         {tasks.map((task) => (
           <div className="col-12" key={task.id}>
-            <Task task={task} onTglStatus={onToggleStatus} />
+            <Task task={task} onToggleStatus={onToggleStatus} />
           </div>
         ))}
       </div>

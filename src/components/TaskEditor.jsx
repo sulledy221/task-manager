@@ -6,7 +6,7 @@ export default function TaskEditor({ task, onSaveTask }) {
 
   const saveTask = (e) => {
     e.preventDefault();
-    saveTask({ title: title, date: date });
+    onSaveTask({ title: title, date: date });
 
     setTitle("");
     setDate("");

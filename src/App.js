@@ -21,7 +21,7 @@ function App() {
     );
   };
 
-  const [taskEdit, setTaskEdit] = useState();
+  const [showTaskEdit, setShowTaskEdit] = useState();
 
   const onSaveTask = ({ title, date }) => {
     setTasks([
@@ -37,12 +37,12 @@ function App() {
         <div className="col-12 text-right">
           <button
           className="button outline"
-          onClick={() => setTaskEdit(!taskEdit)}>
-            {!taskEdit && "New"}
-            {taskEdit && "➖"}
+          onClick={() => setShowTaskEdit(!showTaskEdit)}>
+            {!showTaskEdit && "New"}
+            {showTaskEdit && "➖"}
           </button>
           </div>
-          {taskEdit && <TaskEditor task={{}} onSaveTask={onSaveTask}/>}
+          {showTaskEdit && <TaskEditor task={{}} onSaveTask={onSaveTask}/>}
         <Tasks
           tasks={tasks}
           onToggleStatus={onToggleStatus}
