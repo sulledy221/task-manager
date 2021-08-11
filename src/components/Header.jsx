@@ -2,9 +2,15 @@
 
 export default function Header({ title }) {
   return (
-    <header>
-      <h1>{title}</h1>
-    </header>
+    <div>
+      <nav className="nav">
+        <div className="nav-left">
+          <a className="brand" href="#">
+            Task Manager
+          </a>
+        </div>
+      </nav>
+    </div>
   )
 }
 
